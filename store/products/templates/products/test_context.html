@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title|title }}</title>
+
+</head>
+<body>
+    <h1>{{ header }}</h1>
+
+    {% for i in products %}
+        <img src="{% get_static_prefix %}images/{{ i.img }}.jpg" alt="">
+    {% endfor %}
+
+    {% if sale_products %}
+        {% for i in sale_products %}
+            <p style="color: red">{{ i }}</p>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>

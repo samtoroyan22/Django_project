@@ -1,0 +1,41 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "?єфш ўхЁэюую ЎтхЄр ё ьюэюуЁрььрьш adidas Originals",
+      "image": "products_images/Adidas-hoodie.png",
+      "description": "? уър  Єърэ№ фы  ётшЄ°юЄют. ?Єшы№ ш ъюьЇюЁЄ Ц ¤Єю юсЁрч цшчэш.",
+      "short_description": "",
+      "price": "6090.00",
+      "quantity": 10,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "?шэ   ъєЁЄър The North Face",
+      "image": "products_images/Blue-jacket-The-North-Face.png",
+      "description": "?ырфър  Єърэ№. ?юфюэхяЁюэшЎрхьюх яюъЁ?Єшх. ?хуъшщ ш Єхяы?щ яєїют?щ эряюыэшЄхы№.",
+      "short_description": "",
+      "price": "24000.00",
+      "quantity": 5,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "?юЁшўэхт?щ ёяюЁЄштэ?щ oversized-Єюя ASOS DESIGN",
+      "image": "products_images/Brown-sports-oversized-top-ASOS-DESIGN.png",
+      "description": "?рЄхЁшры ё яы?°хтющ ЄхъёЄєЁющ. ?фюсэ?щ ш ь уъшщ.",
+      "short_description": "",
+      "price": "4000.00",
+      "quantity": 50,
+      "category": 1
+    }
+  }
+]

@@ -4,6 +4,7 @@ from django.contrib import auth, messages
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from products.models import Basket
 
+from django.contrib.auth.decorators import login_required
 
 def login(request):
     if request.method == "POST":
@@ -39,6 +40,7 @@ def register(request):
     return render(request, "users/register.html", context)
 
 
+@login_required
 def profile(request):
     if request.method == "POST":
         form = UserProfileForm(data=request.POST, instance=request.user, files=request.FILES)
@@ -49,11 +51,23 @@ def profile(request):
             print(form.errors)
     else:
         form = UserProfileForm(instance=request.user)
+
+    # total_sum = 0
+    # total_quantity = 0
+    baskets = Basket.objects.filter(user=request.user)
+    total_sum = sum(b.sum() for b in baskets)
+    total_quantity = sum(b.quantity for b in baskets)
+
+    # for b in baskets:
+    #     total_quantity += b.quantity
+    #     total_sum += b.sum()
+
     context = {
         "form": form,
         "title": "Профиль",
-        "baskets": Basket.objects.all(),
-        "count": Basket.objects.all().count(),
+        "baskets": Basket.objects.filter(user=request.user),
+        "total_sum": total_sum,
+        "total_quantity": total_quantity,
     }
     return render(request, "users/profile.html", context)
 
